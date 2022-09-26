@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated uniModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="uniModel.presentation.UniModelModelWizardID"
+            name="%_UI_UniModelModelWizard_label"
+            class="uniModel.presentation.UniModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UniModelModelFile.gif">
+         <description>%_UI_UniModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated uniModel -->
+      <editor
+            id="uniModel.presentation.UniModelEditorID"
+            name="%_UI_UniModelEditor_label"
+            icon="icons/full/obj16/UniModelModelFile.gif"
+            extensions="unimodel"
+            class="uniModel.presentation.UniModelEditor"
+            contributorClass="uniModel.presentation.UniModelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

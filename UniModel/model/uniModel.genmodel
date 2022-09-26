@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/UniModel/src-gen" creationIcons="false" editDirectory="/UniModel.edit/src-gen"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/UniModel/src-gen" creationIcons="false" editDirectory="/UniModel.edit/src-gen"
     editorDirectory="/UniModel.editor/src-gen" modelPluginID="UniModel" modelName="UniModel"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
@@ -8,6 +9,43 @@
   <foreignModel>uniModel.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="UniModel" disposableProviderFactory="true" ecorePackage="uniModel.ecore#/">
-    <genClasses ecoreClass="uniModel.ecore#//NewEClass1"/>
+    <genClasses ecoreClass="uniModel.ecore#//University">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//University/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//University/faculties"/>
+    </genClasses>
+    <genClasses ecoreClass="uniModel.ecore#//Faculty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Faculty/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Faculty/programmes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Faculty/professors"/>
+    </genClasses>
+    <genClasses ecoreClass="uniModel.ecore#//Programme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Programme/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Programme/courses"/>
+    </genClasses>
+    <genClasses ecoreClass="uniModel.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Course/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Course/editions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Course/credits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Course/academicYear"/>
+    </genClasses>
+    <genClasses ecoreClass="uniModel.ecore#//Edition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Edition/year"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Edition/students"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Edition/professors"/>
+    </genClasses>
+    <genClasses ecoreClass="uniModel.ecore#//Professor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Professor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Professor/birthdate"/>
+    </genClasses>
+    <genClasses ecoreClass="uniModel.ecore#//Student">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Student/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Student/birthdate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Student/enrollments"/>
+    </genClasses>
+    <genClasses ecoreClass="uniModel.ecore#//Enrollment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uniModel.ecore#//Enrollment/grade"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Enrollment/edition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uniModel.ecore#//Enrollment/course"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
